@@ -1,7 +1,7 @@
 <script>
   import { characters } from "./stores";
-  import characterQuery from "./queries/characterQuery";
   import CharacterCard from "./CharacterCard.svelte";
+  import Spinner from "./Spinner.svelte";
 
   let characterName = "",
     characterInfo = [],
@@ -59,8 +59,7 @@
 
 <!--Added await block so that the UI is smoother when the images load-->
 {#await promise}
-  <!--Could do a spinner-->
-  <p>Getting character...</p>
+  <Spinner />
 {:then value}
   <article>
     {#each foundCharacters as { name, image, location, origin }}
