@@ -1,6 +1,6 @@
 <script>
   import { characters } from "./stores";
-  import CharacterCard from "./CharacterCard.svelte";
+  import Characters from "./Characters.svelte";
   import Spinner from "./Spinner.svelte";
 
   let characterName = "",
@@ -45,30 +45,33 @@
 <style>
   article {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
+  }
+  form {
+    display: flex;
+    justify-content: center;
   }
 </style>
 
-<form>
-  <input type="text" bind:value={characterName} />
+<article>
+  <form>
+    <h2>Wubbalubbadubdub!</h2>
 
-  <p>{characterName || ''}</p>
+    <input type="text" bind:value={characterName} />
 
-  <button on:click|preventDefault={getCharacterInfo}>Find Character</button>
-</form>
+    <p>{characterName || ''}</p>
 
-<!--Added await block so that the UI is smoother when the images load-->
-{#await promise}
-  <Spinner />
-{:then value}
-  <article>
-    {#each foundCharacters as { name, image, location, origin }}
-      <CharacterCard {name} {image} {location} {origin} />
-    {:else}
-      <div>Character Not Found</div>
-    {/each}
-  </article>
-{:catch error}
-  <!-- promise was rejected -->
-  <p>There was an error: {error}</p>
-{/await}
+    <button on:click|preventDefault={getCharacterInfo}>Find Character</button>
+  </form>
+
+  <!--Added await block so that the UI is smoother when the images load-->
+  {#await promise}
+    <Spinner />
+  {:then value}
+    <Characters {foundCharacters} />
+  {:catch error}
+    <!-- promise was rejected -->
+    <p>There was an error: {error}</p>
+  {/await}
+
+</article>

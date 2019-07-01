@@ -23,6 +23,4 @@
 
 <h1>The Rick and Morty Tracker</h1>
 
-<h2>Wubbalubbadubdub, {name}!</h2>
-
 <Chooser />

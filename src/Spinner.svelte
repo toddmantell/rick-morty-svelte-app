@@ -9,8 +9,8 @@
     margin: -75px 0 0 -75px;
     width: 200px;
     height: 200px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 0.5s linear infinite;
+    animation: spin 0.5s linear infinite;
   }
 
   @keyframes spin {
