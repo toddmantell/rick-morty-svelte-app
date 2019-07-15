@@ -3,7 +3,6 @@
 </script>
 
 <style>
-  /* @media () */
   figure {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: auto;

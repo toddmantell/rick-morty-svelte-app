@@ -45,22 +45,35 @@
 <style>
   article {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
   }
   form {
-    display: flex;
-    justify-content: center;
+  }
+
+  input {
+    display: block;
+    border-radius: 6px;
+  }
+
+  button {
+    background-color: #000;
+    color: green;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+
+  button:hover {
+    box-shadow: 0 4px 8px 0 grey;
   }
 </style>
 
 <article>
   <form>
     <h2>Wubbalubbadubdub!</h2>
-
-    <input type="text" bind:value={characterName} />
-
-    <p>{characterName || ''}</p>
-
+    <input
+      type="text"
+      placeholder="Enter Character Name"
+      bind:value={characterName} />
     <button on:click|preventDefault={getCharacterInfo}>Find Character</button>
   </form>
 
