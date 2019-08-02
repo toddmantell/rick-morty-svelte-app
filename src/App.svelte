@@ -8,6 +8,7 @@
 <style>
   h1 {
     color: #000;
+    text-align: center;
   }
 </style>
 

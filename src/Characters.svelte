@@ -9,6 +9,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+
+  h3 {
+    text-align: center;
+  }
 </style>
 
 <article>
@@ -16,6 +20,7 @@
     <!--Before you show this, do an each with an if/else, then you can show how else makes this more succinct-->
     <CharacterCard {name} {image} {location} {origin} />
   {:else}
-    <div>Character Not Found</div>
+    <!-- This shouldn't show before you search -->
+    <h3>Character Not Found</h3>
   {/each}
 </article>

@@ -48,11 +48,14 @@
     flex-direction: column;
   }
   form {
+    width: 50%;
+    margin-left: 43.5%;
   }
 
   input {
     display: block;
     border-radius: 6px;
+    margin-left: 1.5%;
   }
 
   button {
@@ -60,6 +63,7 @@
     color: green;
     font-weight: bold;
     border-radius: 6px;
+    margin-left: 4.5%;
   }
 
   button:hover {
