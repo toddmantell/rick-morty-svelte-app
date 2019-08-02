@@ -47,23 +47,32 @@
     display: flex;
     flex-direction: column;
   }
+
+  h2 {
+    text-align: center;
+  }
+
   form {
-    width: 50%;
-    margin-left: 43.5%;
+    display: inline-block;
+  }
+
+  div {
+    display: block;
+    text-align: center;
   }
 
   input {
-    display: block;
+    margin-top: 5px;
     border-radius: 6px;
-    margin-left: 1.5%;
   }
 
   button {
+    display: block;
+    margin-left: 50px;
     background-color: #000;
     color: green;
     font-weight: bold;
     border-radius: 6px;
-    margin-left: 4.5%;
   }
 
   button:hover {
@@ -72,15 +81,18 @@
 </style>
 
 <article>
-  <form>
-    <h2>Wubbalubbadubdub!</h2>
-    <input
-      type="text"
-      placeholder="Enter Character Name"
-      bind:value={characterName} />
-    <button on:click|preventDefault={getCharacterInfo}>Find Character</button>
-  </form>
-
+  <div>
+    <form>
+      <h2>Wubbalubbadubdub!</h2>
+      <label for="character-name">Character Name:</label>
+      <input
+        id="character-name"
+        type="text"
+        placeholder="Enter Character Name"
+        bind:value={characterName} />
+      <button on:click|preventDefault={getCharacterInfo}>Find Character</button>
+    </form>
+  </div>
   <!--Added await block so that the UI is smoother when the images load-->
   {#await promise}
     <Spinner />
